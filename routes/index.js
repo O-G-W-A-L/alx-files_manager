@@ -1,6 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { Express } from 'express';
 import AppController from '../controllers/AppController';
+import UsersController from '../controllers/UsersController';
 import { APIError, errorResponse } from '../middlewares/error';
 
 //Injects routes with their handlers to the given Express application
