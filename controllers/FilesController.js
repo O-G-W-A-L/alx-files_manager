@@ -42,8 +42,8 @@ const isValidId = (id) => {
 };
 
 export default class FilesController {
-  //Uploads a file
-  static async postUpload(req, res) {
+  // Handles file upload
+  static async postUpload(req: Request, res: Response) {
     const { user } = req;
     const name = req.body ? req.body.name : null;
     const type = req.body ? req.body.type : null;
@@ -56,7 +56,7 @@ export default class FilesController {
       return;
     }
     if (!type || !Object.values(VALID_FILE_TYPES).includes(type)) {
-      res.status(400).json({ error: 'Missing type' });
+      res.status(400).json({ error: 'Invalid or missing type' });
       return;
     }
     if (!req.body.data && type !== VALID_FILE_TYPES.folder) {
