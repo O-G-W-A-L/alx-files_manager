@@ -7,7 +7,7 @@ import FilesController from '../controllers/FilesController';
 import { APIError, errorResponse } from '../middlewares/error';
 import { basicAuthenticate, xTokenAuthenticate } from '../middlewares/auth';
 
-//Injects routes with their handlers to the given Express application
+// Injects routes with their handlers to the given Express application
 const injectRoutes = (api) => {
   api.get('/status', AppController.getStatus);
   api.get('/stats', AppController.getStats);
