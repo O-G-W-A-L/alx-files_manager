@@ -1,12 +1,12 @@
 // eslint-disable import/no-named-as-default
-//eslint-disable no-unused-vars
+// eslint-disable no-unused-vars
 import sha1 from 'sha1';
 import { Request } from 'express';
 import mongoDBCore from 'mongodb/lib/core';
 import dbClient from './db';
 import redisClient from './redis';
 
-//Fetches the user from the Authorization header in the given request object
+// Fetches the user from the Authorization header in the given request object
 export const getUserFromAuthorization = async (req) => {
   const authorization = req.headers.authorization || null;
 
@@ -30,7 +30,7 @@ export const getUserFromAuthorization = async (req) => {
   return user;
 };
 
-//Fetches the user from the X-Token header in the given request object
+// Fetches the user from the X-Token header in the given request object
 export const getUserFromXToken = async (req) => {
   const token = req.headers['x-token'];
 
